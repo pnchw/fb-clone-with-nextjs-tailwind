@@ -1,21 +1,50 @@
+@import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@layer components {
+    .icon {
+        @apply p-2 mr-1.5 w-10 h-10
+        text-gray-700 bg-gray-200 rounded-full
+        cursor-pointer hover:bg-gray-300
+        flex shrink-0; 
+    }
+
+    .inputIcon {
+        @apply flex items-center space-x-1 hover:bg-gray-100
+        flex-grow justify-center p-2 rounded-xl cursor-pointer
+    }
+
+    body {
+        @apply bg-[rgba(245,245,245,1)]
+    }
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+        width: none;
+        background: transparent;
+    }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    .scrollbar-width::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .scrollbar-width::-webkit-scrollbar-thumb {
+        background: #f5f5f5;
+        border-radius: 20px;
+    }
+
+    .scrollbar-width::-webkit-scrollbar-thumb:hover {
+        background: #cccccc;
+    }
+    
+    .custom-shadow {
+        box-shadow: 0 1px 8px rgba(0,0,0,0.2);
+    }
 }
